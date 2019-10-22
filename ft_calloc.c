@@ -6,7 +6,7 @@
 /*   By: pmaldagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:18:04 by pmaldagu          #+#    #+#             */
-/*   Updated: 2019/10/15 16:03:38 by pmaldagu         ###   ########.fr       */
+/*   Updated: 2019/10/21 14:59:13 by pmaldagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t		i;
-	char		*calloc;
+	size_t	i;
+	char	*calloc;
 
 	i = 0;
 	if (count == 0 || size == 0)
@@ -25,12 +25,12 @@ void	*ft_calloc(size_t count, size_t size)
 	}
 	if ((calloc = malloc(size * count)) != 0)
 	{
-		while (i <= count)
+		while (i < count * size)
 		{
 			calloc[i] = '\0';
 			i++;
 		}
 		return (calloc);
 	}
-	return (0);
+	return (NULL);
 }

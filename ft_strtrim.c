@@ -6,7 +6,7 @@
 /*   By: pmaldagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:06:36 by pmaldagu          #+#    #+#             */
-/*   Updated: 2019/10/15 18:53:35 by pmaldagu         ###   ########.fr       */
+/*   Updated: 2019/10/22 14:05:42 by pmaldagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,18 @@ static int		ft_smalloc(const char *s1, const char *set)
 	return (ft_strlen(s1) - nocc);
 }
 
+static char		*ft_emptys(void)
+{
+	char	*emp;
+
+	if ((emp = malloc(sizeof(char) * 1)) != NULL)
+	{
+		emp[0] = '\0';
+		return (emp);
+	}
+	return (NULL);
+}
+
 char			*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
@@ -58,15 +70,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	j = 0;
-	if (s1 == 0)
-	{
-		if ((trmd = malloc(sizeof(char) * 1)) != 0)
-		{
-			trmd[0] = '\0';
-			return (trmd);
-		}
-		return (NULL);
-	}
+	if (s1 == NULL || set == NULL)
+		return (ft_emptys());
 	else if ((trmd = malloc(sizeof(char) * (ft_smalloc(s1, set) + 1))) != 0)
 	{
 		while (ft_ocheck(s1[j], set) == 0)

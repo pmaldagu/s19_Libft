@@ -6,7 +6,7 @@
 /*   By: pmaldagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:27:00 by pmaldagu          #+#    #+#             */
-/*   Updated: 2019/10/16 14:20:03 by pmaldagu         ###   ########.fr       */
+/*   Updated: 2019/10/22 13:50:49 by pmaldagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,31 @@ static int		ft_sstring(const char *s, char c)
 	return (i);
 }
 
-static void		ft_errfree(char **split, const char *s, char c)
+static char		**ft_errfree(char **split, const char *s, char c)
 {
 	int		i;
+	int		j;
 
 	i = 0;
-	while (i < ft_nstring(s, c))
+	j = ft_nstring(s, c);
+	while (i < j)
 	{
-		free(split[i]);
+		if (split[i] == NULL)
+		{
+			i = 0;
+			while (i < j)
+			{
+				free(split[i]);
+				i++;
+			}
+			return (NULL);
+		}
 		i++;
 	}
+	return (split);
 }
 
-static char		*ft_tmpstr(char **split, const char *s, char c)
+static char		*ft_tmpstr(const char *s, char c)
 {
 	int		i;
 	char	*tmp;
@@ -73,9 +85,7 @@ static char		*ft_tmpstr(char **split, const char *s, char c)
 		tmp[i] = '\0';
 		return (tmp);
 	}
-	ft_errfree(split, s, c);
-	split = 0;
-	return (0);
+	return (NULL);
 }
 
 char			**ft_split(char const *s, char c)
@@ -86,22 +96,22 @@ char			**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (s == 0)
-		return (0);
+	if (s == NULL)
+		return (NULL);
 	if ((split = malloc(sizeof(char *) * (ft_nstring(s, c) + 1))) != 0)
 	{
 		while (s[i] != '\0')
 		{
 			if (s[i] != c)
 			{
-				split[j++] = ft_tmpstr(split, &s[i], c);
+				split[j++] = ft_tmpstr(&s[i], c);
 				i = i + ft_sstring(&s[i], c);
 			}
 			else if (s[i] == c)
 				i++;
 		}
 		split[j] = 0;
-		return (split);
+		return (ft_errfree(split, s, c));
 	}
-	return (0);
+	return (NULL);
 }

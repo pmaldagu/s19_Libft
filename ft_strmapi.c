@@ -6,22 +6,22 @@
 /*   By: pmaldagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 14:33:36 by pmaldagu          #+#    #+#             */
-/*   Updated: 2019/10/15 18:52:13 by pmaldagu         ###   ########.fr       */
+/*   Updated: 2019/10/22 14:04:29 by pmaldagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_protect(void)
+static char		*ft_emptys(void)
 {
-	char	*ptct;
+	char			*emp;
 
-	if ((ptct = malloc(sizeof(char) * 1)) != 0)
+	if ((emp = malloc(sizeof(char) * 1)) != NULL)
 	{
-		ptct[0] = '\0';
-		return (ptct);
+		emp[0] = '\0';
+		return (emp);
 	}
-	return (0);
+	return (NULL);
 }
 
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
@@ -32,8 +32,8 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	j = 0;
-	if (s == 0)
-		return (ft_protect());
+	if (s == NULL || f == NULL)
+		return (ft_emptys());
 	while (s[i] != '\0')
 		i++;
 	if ((mapi = malloc(sizeof(char) * (i + 1))) != NULL)

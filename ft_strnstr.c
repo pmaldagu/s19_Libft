@@ -6,7 +6,7 @@
 /*   By: pmaldagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:57:13 by pmaldagu          #+#    #+#             */
-/*   Updated: 2019/10/16 16:46:32 by pmaldagu         ###   ########.fr       */
+/*   Updated: 2019/10/21 17:09:33 by pmaldagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ char	*ft_strnstr(const char *h, const char *n, size_t len)
 	unsigned int j;
 
 	i = 0;
-	if(h == NULL || n == NULL)
-		return (NULL);
-	if (n[i] == 0 )
+	if (n[i] == 0)
 		return ((char *)h);
 	while (h[i] != '\0')
 	{
@@ -33,5 +31,5 @@ char	*ft_strnstr(const char *h, const char *n, size_t len)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

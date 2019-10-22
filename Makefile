@@ -6,7 +6,7 @@
 #    By: pmaldagu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/22 09:46:31 by pmaldagu          #+#    #+#              #
-#    Updated: 2019/10/16 14:59:18 by pmaldagu         ###   ########.fr        #
+#    Updated: 2019/10/21 14:50:15 by pmaldagu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,10 @@ SBONUS = ft_lstadd_back_bonus.c \
 		ft_lstlast_bonus.c \
 		ft_lstnew_bonus.c \
 		ft_lstsize_bonus.c \
+		ft_lstdelone_bonus.c \
+		ft_lstclear_bonus.c \
+		ft_lstiter_bonus.c \
+		ft_lstmap_bonus.c \
 		
 NAME = libft.a
 
@@ -67,7 +71,7 @@ RM = rm -rf
 
 HEADER = ./libft.h
 
-BHEADER = ./libft_bonus.h
+BHEADER = ./libft.h
 
 TEST = ./test/main.c
 
@@ -81,10 +85,9 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)   
 
-bonus: fclean
+bonus:
 	$(GCC) $(CFLAGS) -I$(BHEADER) -c $(SBONUS)
 	ar rc $(NAME) $(BOBJS)
-	ranlib $(NAME)
 
 test: $(TEST) lib
 	$(GCC) $(FLAGS) -I$(HEADER) $(NAME) $(TEST)
