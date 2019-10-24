@@ -6,7 +6,7 @@
 #    By: pmaldagu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/22 09:46:31 by pmaldagu          #+#    #+#              #
-#    Updated: 2019/10/21 14:50:15 by pmaldagu         ###   ########.fr        #
+#    Updated: 2019/10/22 17:50:48 by pmaldagu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,6 @@ SRC = ft_atoi.c \
 	ft_strncmp.c \
 	ft_strnstr.c \
 	ft_strrchr.c \
-	ft_strsplit.c \
-	ft_strsub.c \
 	ft_strtrim.c \
 	ft_substr.c \
 	ft_tolower.c \

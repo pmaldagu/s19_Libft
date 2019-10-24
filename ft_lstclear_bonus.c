@@ -6,7 +6,7 @@
 /*   By: pmaldagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 17:51:20 by pmaldagu          #+#    #+#             */
-/*   Updated: 2019/10/21 15:02:40 by pmaldagu         ###   ########.fr       */
+/*   Updated: 2019/10/23 15:52:47 by pmaldagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,14 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list *tmp;
 
-	if (lst != NULL)
+	if (lst != NULL || del != NULL)
 	{
-		if ((tmp = malloc(sizeof(t_list))) != NULL)
+		while (*lst)
 		{
-			while (*lst)
-			{
-				del((*lst)->content);
-				tmp = *lst;
-				(*lst) = (*lst)->next;
-				free(tmp);
-			}
+			del((*lst)->content);
+			tmp = *lst;
+			(*lst) = (*lst)->next;
+			free(tmp);
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: pmaldagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:33:25 by pmaldagu          #+#    #+#             */
-/*   Updated: 2019/10/21 19:41:06 by pmaldagu         ###   ########.fr       */
+/*   Updated: 2019/10/23 16:01:55 by pmaldagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ int			ft_atoi(const char *str)
 		value = ((value * 10) + (str[i] - 48));
 		i++;
 	}
-	if (value > 9223372036854775807)
+	if (value > 2147483648 && value > 9223372036854775807)
 		return (ft_extreme(sign));
-	value = value * sign;
-	return (value);
+	return (value * sign);
 }
