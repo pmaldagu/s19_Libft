@@ -7,7 +7,7 @@ you’ll be allowed to use in all your other projects."
 
 ## Status
 
-Success: 
+### Success
 ```diff
 + 104%
 ```
