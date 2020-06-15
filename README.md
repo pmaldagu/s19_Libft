@@ -24,7 +24,7 @@ Moulinette:
 
 ### Updates
 
-- [ ] Correction
-- [ ] Optimisation
+- [ ] correction
+- [ ] optimisation
 - [ ] get_next_line implementation
 - [ ] ft_printf implementation
