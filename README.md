@@ -26,5 +26,5 @@ Moulinette:
 
 - [ ] Correction
 - [ ] Optimisation
-- [ ] Gnl implementation
+- [ ] get_next_line implementation
 - [ ] ft_printf implementation
