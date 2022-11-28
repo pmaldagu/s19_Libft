@@ -9,7 +9,7 @@ you’ll be allowed to use in all your other projects.
 
 ## Status
 
-Succes: 104%
+Success: 104%
 
 ## References
 
