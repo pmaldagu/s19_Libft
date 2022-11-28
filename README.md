@@ -17,6 +17,14 @@ Compile and create the archive libft.a:
 ```
 make
 ```
+Delete all objects:
+```
+make clean
+```
+Delete objects and the archive:
+```
+make fclean
+```
 
 ## References
 
