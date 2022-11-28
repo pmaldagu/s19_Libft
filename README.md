@@ -28,7 +28,7 @@ make fclean
 
 ## References
 
-- RTFM
+- RTFM:
 ```
 man [FUNCTION NAME]
 ```
