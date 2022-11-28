@@ -11,6 +11,12 @@ you’ll be allowed to use in all your other projects."
 
 Success: 104%
 
+## How to
+
+```
+make
+```
+
 ## References
 
 RTFM
