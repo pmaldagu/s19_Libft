@@ -21,7 +21,7 @@ Delete all objects:
 ```
 make clean
 ```
-Delete objects and the archive:
+Delete all objects and the archive:
 ```
 make fclean
 ```
