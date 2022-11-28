@@ -22,5 +22,5 @@ make
 
 - RTFM
 ```
-man
+man [FUNCTION NAME]
 ```
